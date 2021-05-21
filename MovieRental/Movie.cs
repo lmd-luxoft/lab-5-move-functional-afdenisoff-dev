@@ -4,35 +4,26 @@ using System;
 
 namespace MovieRental
 {
-    public class Movie
+    public abstract class Movie
     {
-        private string title;
-        private Type type;
+        public bool IsBonused { get; }
 
-        public Movie(string title, Type type)
-        {
-            this.title = title;
-            this.type = type;
-        }
+        public int Amount { get; protected set; }
 
-        public enum Type
+        public string Title { get; }
+
+        public Movie(string title, int baseAmount, bool isBonused)
         {
-            NEW_RELEASE,
-            REGULAR,
-            CHILDREN
+            Title = title;
+            Amount = baseAmount;
+            IsBonused = isBonused;
         }
 
-        public string getTitle()
-        {
-            return title;
-        }
-        public Type getPriceCode()
-        {
-            return type;
-        }
+        public abstract void SetAmount(int daysRented);
+
         public override string ToString()
         {
-            return title;
+            return Title;
         }
     }
 }
