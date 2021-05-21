@@ -6,23 +6,27 @@ namespace MovieRental
 {
     internal class Rental
     {
-        private Movie movie;
-        private int daysRental;
+        internal const int ChildrenBaseAmount = 15;
+        internal const int ChildrenBaseRentalDays = 3;
+        
+        internal const int RegularBaseAmount = 2;
+        internal const int RegularBaseRentalDays = 2;
+
+        internal const int NewReleaseBaseAmount = 0;
+
+        internal Movie Movie { get; }
+        internal int DaysRental { get; }
 
         public Rental(Movie movie, int daysRental)
         {
-            this.movie = movie;
-            this.daysRental = daysRental;
+            Movie = movie;
+            DaysRental = daysRental;
         }
 
-        internal Movie getMovie()
-        {
-           return movie;
-        }
+        public void SetAmount() => Movie.SetAmount(DaysRental);
 
-        internal int getDaysRented()
-        {
-            return daysRental;
-        }
+        public int Amount => Movie.Amount;
+
+        public bool IsBonused => Movie.IsBonused;
     }
 }

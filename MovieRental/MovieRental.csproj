@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="NewReleaseMovie.cs" />
+    <Compile Include="RegularMovie.cs" />
+    <Compile Include="ChildrenMovie.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Rental.cs" />
     <Compile Include="TestClass.cs" />
